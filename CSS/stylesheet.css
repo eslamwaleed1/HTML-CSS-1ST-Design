@@ -1,0 +1,606 @@
+/* Variables Start */
+:root {
+    --mainColor: #10cab7;
+    --secondaryColor: #2d4756;
+    --barsHeight: 7%;
+    --padding: 60px;
+}
+/* Variables End */
+
+/* --------------*/
+
+/* Global Rules Start */
+* {
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+i {
+    color: var(--mainColor);
+}
+/* Global Rules End*/
+
+/* ------------ */
+
+/* Components Start */
+
+    /* 1 */
+    /* Heading Component Start */
+.heading{
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+.big-heading{
+    font-size: 9rem;
+    letter-spacing: -14px;
+    opacity: 6%;
+    font-weight: 700;
+    margin: 0;
+}
+.small-heading{
+    font-size: calc(9rem * (15/100));
+    letter-spacing: -2px;
+    color: black;
+    opacity: 1;
+    transform: translateX(1%);
+    margin-top: -51px;
+}
+@media (max-width: 761px) {
+    .big-heading {
+        font-size: 5rem;
+        letter-spacing: -8px;
+    }
+
+    .small-heading {
+        font-size: calc(5rem * (15/100));
+        letter-spacing: -1px;
+        margin-top: -27px;
+        transform: translateX(1.5%);
+    }
+}
+    /* Heading Component End */
+
+/* Components End */
+
+/* ------------ */
+
+/* Important for Accessibility. */
+h1[aria-label] {
+    display: none;
+}
+
+/* ------------ */
+
+/* Header Start */
+header .container {
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+header img{
+    width: 4.7rem;
+    height: 1.9rem;
+}
+header span{
+    display: inline-block;
+}
+header .links{
+    height: 1.9rem;
+    width: 1.5rem;
+    position: relative;
+}
+.links>span{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+}
+.links>span span:first-child{
+    height: var(--barsHeight);
+    width: 100%;
+}
+.links>span span:nth-child(2) {
+    height: var(--barsHeight);
+    width: 60%;
+    transition: 0.5s;
+}
+.links>span span:last-child {
+    height: calc(var(--barsHeight) * 1.4);
+    width: 100%;
+}
+.links>span span{
+    background-color: black;
+}
+.links:hover span:nth-child(2){
+    width: 100%;
+}
+header ul{
+    list-style: none;
+    position: absolute;
+    top: 97%;
+    height: 12.6rem;
+    width: 12.6rem;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: start;
+    background-color: #f7f7f7;
+    margin-right: 10.8rem;
+    transition: 0.5s;
+    padding: 10px 0 10px 0;
+    display: none;
+}
+header a{
+    text-decoration: none;
+    color: black;
+}
+header ul::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-width: 12px;
+    border-color: transparent transparent #eee transparent;
+    border-style: solid;
+    position: absolute;
+    top: -23px;
+    right: 2px;
+}
+header ul li{
+    padding-left: 20px;
+    transition: 0.5s;
+}
+.links hr{
+    width: 99%;
+    border-color: rgba(10, 10, 10, 0.2);
+}
+.links:hover ul {
+    display: flex;
+}
+ul li:hover{
+    padding-left: 30px;
+}
+/* Header End */
+
+/* ------------ */
+
+/* Landing Start */
+.landing{
+    width: 100%;
+    background-image: url('../images/jumbtron.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 93vh;
+    align-items: flex-start;
+}
+.landing .container{
+    flex-direction: column;
+    margin-top: 100px;
+}
+.hello {
+    color: var(--mainColor);
+    font-weight: 800;
+    font-size: 3rem;
+}
+@media (min-width: 1000px){
+    .hello{
+        font-size: 4rem;
+    }
+}
+.landing p {
+    opacity: 85%;
+    margin: 0;
+}
+@media (max-width: 452px) {
+
+    .landing h1,
+    .landing p {
+        text-align: center;
+    }
+
+    .landing .container {
+        width: 75%;
+        margin-top: 150px;
+    }
+}
+/* Landing End */
+
+/* ------------ */
+
+/* Features Start */
+.features{
+    width: 100%;
+    padding: 50px 0;
+    background-color: #f6f6f6;
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: 64px;
+}
+.features .container>div{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.features i{
+    font-size: 50px;
+}
+.features p{
+    max-width: 70%;
+    padding: 0;
+    margin: 0;
+}
+@media (max-width: 527px) {
+    .features p {
+        font-size: 1rem;
+    }
+}
+.features p:first-of-type{
+    font-weight: 700;
+    margin: 40px 0 20px 0;
+}
+.features p:last-of-type {
+    opacity: 0.7;
+    line-height: 1.7;
+}
+/* Features End */
+
+/* ------------ */
+
+/* Services Start */
+.service-area{
+    width: 80%;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+@media (max-width: 530px){
+    .service-area{
+        width: 100%;
+    }
+}
+.services{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px 50px;
+
+}
+.services .service{
+    display: grid;
+    grid-template-rows: auto 1.75fr;
+    grid-template-columns: 0.25fr 1.75fr;
+    grid-template-areas: "i pp" ". ppp";
+    gap: 0 15px;
+}
+.services .service i{
+    grid-area: i;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.bold-p {
+    grid-area: pp;
+}
+.desc-p {
+    grid-area: ppp;
+}
+.image {
+    background-image: url('../images/ea0b920024f87de1c3afed8ce69b3446.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 280px;
+    width: 268px;
+    position: relative;
+}
+.image::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    transform: translate(45%, -30px);
+    height: 340px;
+    width: 70px;
+    background-color: var(--secondaryColor);
+}
+@media (max-width: 1286px){
+    .service-area .image{
+        display: none;
+    }
+}
+/* Services End */
+
+/* ------------ */
+
+/* Portfolio Start */
+.portfolio{
+    background-color: #fafafa;
+    width: 100%;
+    flex-flow: column wrap;
+    justify-content: space-around;
+}
+.cards{
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(291px, 1fr));
+    gap: 5px;
+}
+.card{
+    height: 290px;
+    width: 291px;
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas: "picture" "p1" "p2";
+}
+@media (max-width: 1285px){
+    .card{
+        margin-bottom: 80px;
+    }
+}
+.card p{
+    margin: 0;
+}
+.card img{
+    grid-area: picture;
+    height: 210px;
+    width: 291px;
+}
+.card p:first-of-type{
+    grid-area: p1;
+    font-weight: 700;
+    padding: 20px 20px 10px 20px;
+    background-color: white;
+    font-size: 0.9rem;
+}
+.card p:last-of-type {
+    grid-area: p2;
+    opacity: 0.7;
+    font-size: 0.8rem;
+    padding: 0px 20px 20px 20px;
+    background-color: white;
+    line-height: 1.6;
+}
+/* Portfolio End */
+
+/* ------------ */
+
+/* About Start */
+.about-heading .heading {
+    margin-bottom: 107px;
+}
+.about{
+    padding-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(291px, 1fr));
+    gap: 77px;
+}
+.about .image{
+    margin-top: 50px;
+    background-image: url("../images/about.png");
+}
+.about .image::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    transform: translate(-21%, -38px);
+    height: 340px;
+    width: 70px;
+    background-color: #ebebeb;
+}
+.about .image>div{
+    background-color: var(--mainColor);
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    transform: translate(38%, -23px);
+    height: 240px;
+    width: 70px;
+}
+.about .image::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    transform: translate(99%, 11rem);
+    height: 50px;
+    width: 100px;
+    background-color: var(--mainColor);
+}
+@media (max-width: 461px){
+    .about .image{
+        display: none;
+    }
+}
+.about .image+div {
+    flex-direction: column;
+    justify-content: space-around;
+    line-height: 2;
+    align-self: center;
+}
+.about p{
+    font-size: 0.85rem;
+}
+.about p:first-of-type{
+    font-weight: 700;
+    margin-bottom: 36px;
+}
+.about p:last-of-type {
+    color: #777;
+    position: relative;
+}
+.about p:last-of-type::before {
+    background-color: var(--mainColor);
+    content: "";
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    top: -17%;
+    left: 0;
+}
+/* About End */
+
+/* ------------ */
+
+/* Contact End */
+.contact {
+    background-color: #fafafa;
+    width: 100%;
+}
+.contact .heading{
+    margin-bottom: 128px;
+}
+.contact .container:nth-of-type(2) p:first-of-type{
+    color: var(--secondaryColor);
+    font-size: 2rem;
+    font-weight: 800;
+}
+.contact .container:nth-of-type(2) p:last-of-type {
+    color: var(--mainColor);
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+    margin-left: 4%;
+    margin-top: -3%;
+}
+@media (max-width: 761px){
+    .contact .container:nth-of-type(2) p:first-of-type {
+            font-size: 1.5rem;
+        }
+    
+        .contact .container:nth-of-type(2) p:last-of-type {
+            font-size: 1.5rem;
+        }
+}
+.contact{
+    padding-bottom: var(--padding);
+}
+.contact .social i{
+    color: var(--secondaryColor);
+    font-size: 20px;
+    margin: 0 10px;
+}
+/* Contact End */
+
+/* ------------ */
+
+/* Footer Start */
+footer{
+    background-color: var(--secondaryColor);
+    margin: 0;
+    padding: 10px;
+    color: white;
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+footer span{
+    color: var(--mainColor);
+}
+/* Footer End */
+
+
+/* Fonts locally hosted using Google Webfonts Helper */
+/* work-sans-200 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/work-sans-v18-latin-200.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* work-sans-300 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/work-sans-v18-latin-300.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* work-sans-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/work-sans-v18-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* work-sans-500 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/work-sans-v18-latin-500.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/* work-sans-600 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/work-sans-v18-latin-600.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* work-sans-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/work-sans-v18-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* work-sans-800 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/work-sans-v18-latin-800.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
+
